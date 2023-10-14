@@ -881,6 +881,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "rocket-fibonacci"
+version = "0.1.0"
+dependencies = [
+ "rocket",
+]
+
+[[package]]
 name = "rocket_codegen"
 version = "0.5.0-rc.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1105,13 +1112,6 @@ dependencies = [
  "redox_syscall",
  "rustix",
  "windows-sys",
-]
-
-[[package]]
-name = "test-rocket"
-version = "0.1.0"
-dependencies = [
- "rocket",
 ]
 
 [[package]]

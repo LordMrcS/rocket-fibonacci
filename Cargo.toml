@@ -1,5 +1,5 @@
 [package]
-name = "test-rocket"
+name = "rocket-fibonacci"
 version = "0.1.0"
 edition = "2021"
 
