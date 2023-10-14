@@ -1,0 +1,13 @@
+{
+    "version": "2.0.0",
+    "configurations": [
+        {
+            "name": "Build and Launch",
+            "type": "cppvsdbg",
+            "cwd": "${workspaceFolder}",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceRoot}/target/debug/${workspaceRootFolderName}",
+        }
+    ]
+}
