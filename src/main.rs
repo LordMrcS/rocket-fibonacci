@@ -2,7 +2,7 @@
 extern crate rocket;
 use rocket::tokio::task;
 
-fn fibonacci(n: u32) -> u32 {
+fn fibonacci(n: u64) -> u64 {
     match n {
         0 => 1,
         1 => 1,
@@ -10,8 +10,13 @@ fn fibonacci(n: u32) -> u32 {
     }
 }
 
+#[get("/")]
+async fn index() -> String {
+     return "send some number in the url".to_string();
+}
+
 #[get("/<n>")]
-async fn hello(n: u32) -> String {
+async fn calc_fibonacci(n: u64) -> String {
     let result = task::spawn_blocking(move || {
         fibonacci(n).to_string()
     })
@@ -23,5 +28,5 @@ async fn hello(n: u32) -> String {
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/", routes![hello])
+    rocket::build().mount("/", routes![index, calc_fibonacci])
 }
